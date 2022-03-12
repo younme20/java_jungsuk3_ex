@@ -107,11 +107,11 @@ public class Chapter05Array {
         // . . 문자열을 숫자로 변환한다 입력한 값이 숫자가 아닐 경우 예외가 발생한다
         //int money2 = Integer.parseInt(args[0]);
         int money2 = 1360;
-        System.out.println("money="+money2);
+
         int[] coinUnit2 = {500, 100, 50, 10 }; // 동전의 단위
         int[] coin = {5, 5, 5, 5}; // 단위별 동전의 개수
         for(int i=0;i<coinUnit2.length;i++) {
-            int coinNum = 0;
+            int coinNum;
         /* (1) . 아래의 로직에 맞게 코드를 작성하시오
         1. (money) (coinNum) . 금액 을 동전단위로 나눠서 필요한 동전의 개수 를 구한다
         2. coin coinNum . 배열 에서 만큼의 동전을 뺀다
@@ -133,12 +133,6 @@ public class Chapter05Array {
         for(int i=0;i<coinUnit2.length;i++) {
             System.out.println(coinUnit2[i]+"원 :"+coin[i]);
         }
-
-
-
-
-
-
     }
 
 
