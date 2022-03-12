@@ -106,7 +106,7 @@ public class Chapter05Array {
 //        }
         // . . 문자열을 숫자로 변환한다 입력한 값이 숫자가 아닐 경우 예외가 발생한다
         //int money2 = Integer.parseInt(args[0]);
-        int money2 = 3000;
+        int money2 = 1360;
         System.out.println("money="+money2);
         int[] coinUnit2 = {500, 100, 50, 10 }; // 동전의 단위
         int[] coin = {5, 5, 5, 5}; // 단위별 동전의 개수
@@ -118,21 +118,12 @@ public class Chapter05Array {
         ( coin .) 만일 충분한 동전이 없다면 배열 에 있는 만큼만 뺀다
         3. (coinNum) . 금액에서 동전의 개수 와 동전단위를 곱한 값을 뺀다
         */
-            coinNum = money2 / coinUnit2[i];
-            int temp = 0;
-            //coin[i] = coinNum > coin[i] ? 0 : coin[i]-coinNum;
-            if(coinNum > coin[i]) {
-                temp = coin[i];
-                coin[i] = 0;
-            }else {
-                System.out.println(coin[i] + " ::" + coinNum);
-                temp = coin[i] - coinNum;
-                coin[i] = temp;
+            if(money2 > 0){
+                coinNum = money2 / coinUnit2[i];
+                money2 -=coinUnit2[i]*coinNum;
+                coin[i] -=coinNum;
+                System.out.println(coinUnit2[i]+"원 : "+coin[i]);
             }
-            money2 -= coinUnit2[i]*temp;
-            System.out.println(money2+" : "+temp);
-
-            //System.out.println(coinUnit2[i]+"원 : "+coinNum);
         }
         if(money2 > 0) {
             System.out.println("거스름돈이 부족합니다");
